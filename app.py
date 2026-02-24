@@ -35,7 +35,7 @@ with tab1:
                     text = "".join([page.extract_text() for page in reader.pages[:2]])
                     
                     # Model Calling (Fixing the NotFound Error)
-                    model = genai.GenerativeModel('gemini-1.5-flash')
+                    model = genai.GenerativeModel('models/gemini-1.5-flash')
                     prompt = f"Create 3 flashcards from this text. Format each card exactly like this: 'Q: [Question] | A: [Answer]'. Separate cards with '---'. Text: {text[:1500]}"
                     response = model.generate_content(prompt)
                     
