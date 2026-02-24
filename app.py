@@ -31,7 +31,7 @@ with tab1:
             # Pehle 2 pages se text nikalna
             text = "".join([page.extract_text() for page in reader.pages[:2]])
             
-            model = genai.GenerativeModel('gemini-pro')
+            model = genai.GenerativeModel('gemini-1.5-flash')
             prompt = f"Create 3 flashcards from this SSC/RRB JE text. Format: Q: [Question] | A: [Answer]. Text: {text[:1500]}"
             response = model.generate_content(prompt)
             
